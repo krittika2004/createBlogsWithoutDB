@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<ul>
+    <% locals.posts.forEach((post, index) => { %>
+        <li>
+            <h2><%= post.title %></h2>
+            <p><%= post.content %></p>
+            <a href="/editBlog/<%= index %>">Edit</a>
+            <form action="/delete/<%= index %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }) %>
+</ul>
+<button><a href="/">Go Home</a></button>
+<%- include("partials/footer.ejs") %>

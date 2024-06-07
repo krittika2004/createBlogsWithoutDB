@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <h1>Edit Post</h1>
+    <form action="/editBlog/<%= locals.postId %>?_method=PATCH" method="POST">
+        <!-- isme already jo hmari index vli post h uska data show hoyega and when 
+        patch use hoga then we can edit this jazz -->
+        <input type="text" name="title" value="<%= locals.post.title %>" required>
+        <textarea name="content" required><%= locals.post.content %></textarea>
+        <button type="submit">Update Post</button>
+    </form>
+    <a href="/viewBlog">Back to All Posts</a>
+    <%- include("partials/footer.ejs") %>
